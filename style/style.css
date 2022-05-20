@@ -79,12 +79,34 @@ nav{
   
 }
 
+.section{
+  padding: 5rem;
+}
 
 .container{
   width: 100%;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+}
 
+.grid{
+  display: grid;
+  gap: 2rem;
+}
+
+#home .container
+{
+  margin: 0;
+}
+
+#home .text{
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+#home .image img{
+  position: relative;
+  right: 2.93rem;
 }
 
 /********* HOME *********/
