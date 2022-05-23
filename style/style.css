@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+ul{
+  list-style: none;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -36,7 +40,7 @@ body {
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
-h1 {
+.title {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
@@ -69,6 +73,20 @@ h1 {
 }
 
 /********* LAYOUT *********/
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
 /** p achar rem: pixel/16px */
 #header {
   border-bottom: 1px solid #e4e4e4;
@@ -83,14 +101,11 @@ h1 {
   width: 100%;
 }
 
-nav {
-  height: 4.54rem; /* 16px */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+main {
+  margin-top: calc(var(--header-height) + 2rem);
 }
 
+/* logo*/
 .logo {
   font: 700 1.31rem 'Poppins', sans-serif;
   color: var(--title-color);
@@ -100,24 +115,79 @@ nav {
   color: var(--base-color);
 }
 
-main {
-  margin-top: var(--header-height);
+/* navigation */
+nav {
+  height: 4.54rem; /* 16px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.section {
-  padding: 5rem;
+nav ul li{
+  text-align: center;
 }
 
-.container {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+nav ul li a{
+  transition: color 0.2s;
+  position: relative;
 }
 
-.grid {
+nav ul li a:hover{
+  color: var(--base-color);
+}
+
+nav ul li a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after{
+  width: 100%;
+}
+
+nav .menu{
+  opacity: 0;
+  visibility: hidden;
+
+} 
+
+/* ====MOSTRAR MENU====*/
+nav.show .menu{
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav.show .menu{
   display: grid;
-  gap: 2rem;
+  place-content: center;
 }
 
+nav.show ul.grid{
+  gap: 4rem;
+}
+
+
+
+
+/*====  HOME ======*/
 #home {
   overflow: hidden;
 }
@@ -126,26 +196,12 @@ main {
   margin: 0;
 }
 
-#home .text {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  text-align: center;
-}
-
-#home .text p {
-  margin-bottom: 2rem;
-}
-
-#home .text h1 {
-  margin-bottom: 1rem;
-}
-
 #home .image {
   position: relative;
 }
 
 #home .image::before {
-  content: 'asasass';
+  content: '';
   height: 100%;
   width: 100%;
   background: var(--base-color-second);
@@ -164,5 +220,20 @@ main {
 #home .image::before {
   border-radius: 0.25;
 }
+
+#home .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+#home .text p {
+  margin-bottom: 2rem;
+}
+
+#home .text h1 {
+  margin-bottom: 1rem;
+}
+
 
 /********* HOME *********/
