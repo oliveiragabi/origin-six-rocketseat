@@ -34,6 +34,7 @@ a {
 
   /* fonts */
   --title-font-size: 1.875rem
+  --subtitle-font-size: 1rem;
 }
 
 /********* BASE *********/
@@ -104,8 +105,12 @@ body {
   padding: 5rem 0;
 }
 
-.section title{
+.section .title{
   margin-bottom: 0;
+}
+
+.section .subtitle{
+  font: var(--subtitle-font-size);
 }
 
 .section header{
@@ -519,11 +524,15 @@ footer .social a:hover{
 
 /********* Responsivo *********/
 /** extra large devices: 1200> */
+@media (min-width: 1200px){
+  
+}
 /** large devices: 1023> **/
 /** large devices: 992 > */
 /* medium devices: 767> */
 @media (min-width: 992px){
-  .title{
-    font-size: 2.25rem;
+  .root{
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
   }
 }
