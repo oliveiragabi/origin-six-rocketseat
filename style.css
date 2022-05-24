@@ -34,6 +34,11 @@ a {
 }
 
 /********* BASE *********/
+/*rolagem suave*/
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
@@ -100,6 +105,14 @@ body {
   margin-bottom: ;
 }
 
+.section header{
+  margin-bottom: 4rem;
+}
+
+.section header strong{
+  color: var(--base-color);
+}
+
 /** p achar rem: pixel/16px */
 #header {
   border-bottom: 1px solid #e4e4e4;
@@ -112,6 +125,10 @@ body {
   z-index: 100;
   background-color: var(--body-color);
   width: 100%;
+}
+
+#header.scroll{
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
 }
 
 main {
@@ -318,3 +335,27 @@ nav.show div.icon-close{
   text-align: center;
 }
 
+/********* SERVICES *********/
+.cards.grid{
+  gap: 1.5rem;
+}
+
+.cards{
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+.cards i{
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.cards .title{
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
